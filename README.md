@@ -1,38 +1,55 @@
-# Desafio Laravel
 
-O desafio consiste em construir uma pagina web onde os usuários possam fazer o cadastro/login, gerenciar seus veículos e as manutenções.
-Utilizar um layout próprio ou template gratuito responsivo.
+### Passo a passo
+Clone Repositório
+```sh
+git clone https://github.com/diegoamorimsilva/PS-PHP.git
+```
+Crie o Arquivo .env
+```sh
+cp .env.example .env
+```
 
------------------------------------------------------------------------------------------------------------------------------------------------------------
-## Telas:
-- Cadastro de usuário
-- Login
-- Home - Ao estar logado devem ser mostrado as manutenções previstas para os próximos 7 dias com dados do veículo. (Utilizar uma api para buscar essas informações)
-- Criar CRUD para veículos para cada usuário logado.
-- Criar um CRUD para manutenções para cada veículo, incluindo a marca o modelo e a versão.
+Entre no diretorio laradock
+```sh 
+cd laradock/
+```
+Crie o Arquivo .env
+```sh
+cp .env.example .env
+```
+Atualize as variáveis de ambiente do arquivo .env
+```dosini
 
-## Banco de Dados:
-- Definir as tabelas de acordo com o solicitado e utilizar migrate para criação das mesmas.
+PHP_VERSION=8.0
 
-## Diferencial:
-- Rodar o projeto em Docker
-- Normatizar as tabelas (utilizar seed para preencher)
+```
 
------------------------------------------------------------------------------------------------------------------------------------------------------------
+Suba os containers do projeto
+```sh
+docker-compose up -d nginx mysql phpmyadmin workspace
+```
 
-## O que iremos avaliar:
-- Domínio da linguagem, bibliotecas, ferramentas e framework
-- Execução dentro dos padrões propostos nas PSRs
-- Organização do código e boas práticas
-- Layout e organização de HTML, CSS e JS
-- Responsividade
-- Execução final da aplicação
 
-## Sobre a entrega:
-- Assim que concluir o desafio, nos encaminhe a url do repositório onde o teste foi escrito.
+Acessar o container
+```sh
+docker exec -it 8a3cfad159bf03ec246bd5552f553b704f7a170e64eaab470174ef9d70a27661 bash
+```
 
------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## Dúvidas:
-Caso tenha alguma dúvida, pode entrar em contato respondendo esse email, pois nele tem as pessoas que podem auxiliar na resposta da sua dúvida (estaremos disponíveis durante o final de semana também).
-Lembre-se de responder a todos no email, pois assim todos nós poderemos auxiliar.
+Instalar as dependências do projeto
+```sh
+composer install
+```
+
+
+Gerar a key do projeto Laravel
+```sh
+php artisan key:generate
+```
+
+
+Acessar o projeto
+[http://localhost](http://localhost)
+
+Acessar o banco de dados
+[http://localhost:8081](http://localhost:8081)
