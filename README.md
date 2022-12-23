@@ -8,6 +8,14 @@ Crie o Arquivo .env
 ```sh
 cp .env.example .env
 ```
+Clone o laradock (escolhi não subir junto ao meu codigo para caso eu resolva simplesmente escrever o docker-compose)
+
+```sh
+git clone https://github.com/Laradock/laradock.git
+```
+Porque o laradock ?
+
+Por já ser uma potente ferramenta amplamente utilizada e mantida pela comunidade PHP e por conter imagens pré configuradas permitindo mais facilidade e agilidade ao implementar serviços.
 
 Entre no diretorio laradock
 ```sh 
