@@ -40,7 +40,7 @@ docker-compose up -d nginx mysql phpmyadmin workspace
 
 Acessar o container
 ```sh
-docker exec -it 8a3cfad159bf03ec246bd5552f553b704f7a170e64eaab470174ef9d70a27661 bash
+docker exec -it laradock_workspace_1 bash
 ```
 
 
