@@ -1,8 +1,12 @@
 <?php
-
+use App\Http\Controllers\ {
+    UserController 
+};
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use App\Controllers\Admin\CommentController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
-use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,11 +17,11 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/',[UserController::class,'index',['user' =>auth()->user()]])->name('users.index');
+    Route::get('/users/create',[UserController::class,'create'])->name('users.create');
+    Route::post('/users',[UserController::class,'store'])->name('users.store');
+        
 });
 
-Route::get('/users',[UserController::class,'index'])->name('users.index');
-
-
+require __DIR__.'/auth.php';

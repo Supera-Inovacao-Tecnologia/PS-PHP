@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
+@section('title', 'Dashboard')
 
 @section('css')
 <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -153,7 +153,7 @@
 
             <div class="container-fluid">
 
-                <div class="row">
+                {{-- <div class="row">
 
                     <div class="col-xl-6 col-md-6 mb-4">
                         <div class="card border-left-info shadow h-100 py-2">
@@ -192,7 +192,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
             </div>
 
