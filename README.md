@@ -87,3 +87,6 @@ Acessar o projeto
 
 Acessar o banco de dados
 [http://localhost:8081](http://localhost:8081)
+
+Versão em produção na cloudways
+https://phplaravel-901369-3130125.cloudwaysapps.com/
