@@ -7,6 +7,7 @@ use App\Http\Controllers\ {
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use App\Controllers\Admin\CommentController;
+use Illuminate\Support\Facades\Http;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -19,6 +20,8 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('maintenances/show',[MaintenanceController::class,'show'])->name('maintenances.show'); //API
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/',[UserController::class,'index',['user' =>auth()->user()]])->name('users.index');
     Route::get('/users/create',[UserController::class,'create'])->name('users.create');
@@ -38,5 +41,4 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/maintenances/update/{id}',[MaintenanceController::class,'update'])->name('maintenances.update');
     Route::get('/maintenances/delete/{id}',[MaintenanceController::class,'destroy'])->name('maintenances.destroy');
 });
-
 require __DIR__.'/auth.php';

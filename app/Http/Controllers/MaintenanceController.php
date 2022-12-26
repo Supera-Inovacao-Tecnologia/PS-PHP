@@ -49,6 +49,11 @@ class MaintenanceController extends Controller
         $maintenance->update($data);
         return redirect()->route('maintenances.index');
     }
+
+    public function show()
+    {
+       return $this->maintenance->with('vehicle')->get();
+    }
     public function destroy ($id)
     {
         $maintenance = $this->maintenance->find($id);
