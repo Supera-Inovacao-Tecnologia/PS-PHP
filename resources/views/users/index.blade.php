@@ -44,7 +44,7 @@
                     <tbody>
                         @foreach($maintenances as $maintenance)
                         
-                        @if($maintenance->appointment_to => date('Y-m-d') && $maintenance->appointment_to < date('Y-m-d', strtotime('+7 days')))
+                        @if($maintenance->appointment_to >= date('Y-m-d') && $maintenance->appointment_to < date('Y-m-d', strtotime('+7 days')))
                         <tr>
                             <td>{{ $maintenance->vehicle->model}}</td>
                             <td>{{ $maintenance->vehicle->brand }}</td>
