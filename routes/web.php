@@ -24,12 +24,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/users',[UserController::class,'store'])->name('users.store');
     Route::get('/vehicles',[VehicleController::class,'index'])->name('vehicles.index');
     Route::get('/vehicles/create',[VehicleController::class,'create'])->name('vehicles.create');
+    Route::put('/vehicles/{id}',[VehicleController::class,'update'])->name('vehicles.update');
     Route::post('/vehicles',[VehicleController::class,'store'])->name('vehicles.store');
     Route::get('/vehicles/{id}',[VehicleController::class,'edit'])->name('vehicles.edit');
     Route::get('/vehicles/delete/{id}',[VehicleController::class,'destroy'])->name('vehicles.destroy');
-
-
-            
 });
 
 require __DIR__.'/auth.php';

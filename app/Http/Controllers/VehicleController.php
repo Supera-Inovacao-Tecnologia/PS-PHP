@@ -32,7 +32,7 @@ class VehicleController extends Controller
      */
     public function create()
     {
-        return view('users.vehicles.create');
+        return view('users.vehicles.create', ['user' =>auth()->user()]);
     }
 
     /**
@@ -44,9 +44,9 @@ class VehicleController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-
+        $data['user_id'] = auth()->user()->id;
         Vehicle::create($data);
-        return redirect()->route('users.vehicle.index');        
+        return redirect()->route('vehicles.index');        
     }
 
     /**
@@ -84,7 +84,7 @@ class VehicleController extends Controller
         $data = $request->all();
         $vehicle = $this->model->find($id);
         $vehicle->update($data);
-        return redirect()->route('users.vehicle.index');        
+        return redirect()->route('vehicles.index');        
     }
 
     /**
@@ -97,6 +97,6 @@ class VehicleController extends Controller
     {
         $vehicle = $this->model->find($id);
         $vehicle->delete();
-        return redirect()->route('users.vehicle.index');
+        return redirect()->route('vehicles.index');
     }
 }

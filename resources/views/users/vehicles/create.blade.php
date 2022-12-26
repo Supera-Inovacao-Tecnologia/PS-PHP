@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Cadastrar novo veículo')
+
 @section('content')
 <div class="container">
 
@@ -12,7 +13,7 @@
                 <div class="col-lg-7">
                     <div class="p-5">
                         <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-4">Editar veículo</h1>
+                            <h1 class="h4 text-gray-900 mb-4">Cadastrar veículo</h1>
                         </div>
                         @if ($errors->any())
                         <div class="alert alert-danger">
@@ -23,9 +24,8 @@
                             </ul>
                         </div>
                         @endif
-                        <form action="{{route('vehicles.update',$vehicle->id)}}" method="post" class="user">
+                        <form action="{{route('vehicles.store')}}" method="post" class="user">
                             @csrf
-                            @method('PUT')
                             @include('users.vehicles._partials.form')
                         </form>
                     </div>
@@ -33,5 +33,4 @@
             </div>
         </div>
     </div>
-</div>
-@endsection
+    @endsection

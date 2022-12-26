@@ -67,7 +67,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opções Veículos:</h6>
                         <a class="collapse-item" href="/vehicles">Mostrar Todos</a>
-                        <a class="collapse-item" href="cards.html">Cadastrar Novo</a>
+                        <a class="collapse-item" href="/vehicles/create">Cadastrar Novo</a>
                     </div>
                 </div>
             </li>
