@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\ {
-    UserController 
+    UserController,
+    VehicleController
 };
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/',[UserController::class,'index',['user' =>auth()->user()]])->name('users.index');
     Route::get('/users/create',[UserController::class,'create'])->name('users.create');
     Route::post('/users',[UserController::class,'store'])->name('users.store');
-        
+    Route::get('/vehicles',[VehicleController::class,'index'])->name('vehicles.index');
+    Route::get('/vehicles/create',[VehicleController::class,'create'])->name('vehicles.create');
+    Route::post('/vehicles',[VehicleController::class,'store'])->name('vehicles.store');
+    Route::get('/vehicles/{id}',[VehicleController::class,'edit'])->name('vehicles.edit');
+    Route::get('/vehicles/delete/{id}',[VehicleController::class,'destroy'])->name('vehicles.destroy');
+
+
+            
 });
 
 require __DIR__.'/auth.php';
