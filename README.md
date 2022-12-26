@@ -8,6 +8,17 @@ Crie o Arquivo .env
 ```sh
 cp .env.example .env
 ```
+Atualize as variáveis de ambiente do arquivo .env
+```dosini
+
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=root
+
+```
 Clone o laradock (escolhi não subir junto ao meu codigo para caso eu resolva simplesmente escrever o docker-compose)
 
 ```sh
@@ -25,11 +36,11 @@ Crie o Arquivo .env
 ```sh
 cp .env.example .env
 ```
-Atualize as variáveis de ambiente do arquivo .env
+Atualize as variáveis de ambiente do arquivo .env (do laradock)
 ```dosini
 
 PHP_VERSION=8.0
-
+MYSQL_DATABASE=laravel
 ```
 
 Suba os containers do projeto
@@ -54,7 +65,14 @@ Gerar a key do projeto Laravel
 ```sh
 php artisan key:generate
 ```
-
+Exexute as migration
+```sh
+php artisan migrate
+```
+Popular o banco atraves das seeds
+```sh
+php artisan db:seed
+```
 
 Acessar o projeto
 [http://localhost](http://localhost)
